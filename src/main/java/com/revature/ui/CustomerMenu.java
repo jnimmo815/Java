@@ -135,13 +135,14 @@ public class CustomerMenu implements Menu {
 					if (myAmount > customerAccBalance) {
 						System.out.println("The amount you entered is more than is in your account!");
 						System.out.println("The trransaction is rejected!");
-					}
+					} else {
 					double newBalance = customerAccBalance - myAmount;
 					customerAccService.updateCustomerAccountWNum(customerAccountNum1, newBalance);
 					double customerAccBalance1 = customerAccService.getCustomerAccBalanceByNum(customerAccountNum1,
 							username);
 					System.out.println("The withdraw was successful!");
 					System.out.println("Your new account balance is:  " + customerAccBalance1);
+					}
 				} else {
 					System.out.println(
 							"You can not make a withdraw from this account since it" + " has not been accepted yet!");
